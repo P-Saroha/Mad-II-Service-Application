@@ -1,0 +1,5 @@
+id,user_id,username,email,password,service_type,experience,pincode,address,resume_file_path,status,mobile_no,service_id
+1,3,sp2,sp2@gmail.com,sp2,Plumbing Services,5,5656,chd,Backend/uploads/Week_9_Graded.pdf,approved,09999999999,2
+2,4,sp1,sp1@gmail.com,sp1,Cleaning Services,4,343,rtk,Backend/uploads/Week_9_Graded.pdf,approved,01111111111,1
+3,6,sp4,sp4@gmail.com,sp4,Cleaning Services,5,222,chd,Backend/uploads/Week_9_Graded.pdf,approved,99999999,1
+4,5,sp3,sp3@gmail.com,sp3,Cleaning Services,6,343,rtk,Backend/uploads/Week_9_Graded.pdf,pending,01111111111,1
