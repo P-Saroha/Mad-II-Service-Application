@@ -29,6 +29,10 @@ cd Frontend
 
 npm install
 ```
+To start the server:
+```bash
+npm run dev
+```
 
 ### 3. Set Up Virtual Environment
 Create and activate a Python virtual environment:
