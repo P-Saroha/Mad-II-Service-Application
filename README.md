@@ -8,14 +8,16 @@
 
 Built with Flask, VueJS, and Redis, the application includes role-based features, automated reminders, and exportable reports for seamless management.
 
+Welcome to open work! This project is open to contributions from the community. Any changes or recommendations are highly encouraged and appreciated.
+
 ## Installation Instructions
 
 Follow the steps below to set up and run the application:
 
 ### 1. Change Directory Ownership
-Ensure you have write permissions for the project directory:
+Ensure you have write permissions for the project directory. Replace `/path/to/your/project` with the actual path where you set up the project:
 ```bash
-sudo chown -R $(whoami) /home/Final_mad2
+sudo chown -R $(whoami) /path/to/your/project
 ```
 
 ### 2. Install NPM Packages
@@ -60,3 +62,4 @@ Start the required supporting services:
 Finally, start the application:
 ```bash
 python app.py
+```
