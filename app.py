@@ -15,7 +15,8 @@ def createApp():
 
     # model init
     db.init_app(app)
-    CORS(app)
+    CORS(app, origins=["https://mad-ii-service-application.vercel.app"], supports_credentials=True)
+
     
 
     # init cache
