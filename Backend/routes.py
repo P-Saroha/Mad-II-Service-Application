@@ -64,7 +64,7 @@ def protected():
 def home():
     return render_template('index.html')
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login():
     """
     Login route to authenticate users based on role.
