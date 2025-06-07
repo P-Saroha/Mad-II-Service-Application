@@ -30,7 +30,8 @@ def getCSV(id):
     result = AsyncResult(id)
 
     if result.ready():
-        return send_file(f'./Backend/celery/user-downloads/{result.result['professional_file']}'), 200
+        return send_file(f'./Backend/celery/user-downloads/{result.result["professional_file"]}'), 200
+
     else:
         return {'message' : 'task not ready'}, 405
     
