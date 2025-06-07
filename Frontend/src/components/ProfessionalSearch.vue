@@ -98,7 +98,7 @@ export default {
         return;
       }
       try {
-        const response = await fetch("http://127.0.0.1:5000/professional_dashboard", {
+        const response = await fetch("/api/professional_dashboard", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -121,7 +121,7 @@ export default {
         return;
       }
       try {
-        const response = await fetch("http://127.0.0.1:5000/service_professional_search", {
+        const response = await fetch("/api/service_professional_search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -64,7 +64,7 @@
         }
   
         try {
-          const response = await fetch('http://127.0.0.1:5000/admin_summary', {
+          const response = await fetch('/api/admin_summary', {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`

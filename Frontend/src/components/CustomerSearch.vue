@@ -99,7 +99,7 @@
   
         try {
           // Perform the GET request with query parameters
-          const response = await fetch(`http://127.0.0.1:5000/customer_search?search_criteria=${this.selectedCategory}&search_query=${this.searchQuery}`, {
+          const response = await fetch(`/api/customer_search?search_criteria=${this.selectedCategory}&search_query=${this.searchQuery}`, {
             method: 'GET',
             headers: {
               "Authorization": `Bearer ${localStorage.getItem("token")}`,

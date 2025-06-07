@@ -71,7 +71,7 @@ export default {
       };
 
       try {
-        const response = await fetch("http://127.0.0.1:5000/create_service", {
+        const response = await fetch("/api/create_service", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`, // Include JWT token in the request header

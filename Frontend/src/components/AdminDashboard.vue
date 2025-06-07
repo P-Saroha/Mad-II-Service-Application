@@ -115,7 +115,7 @@
             <td>
               <a
                 :href="
-                  'http://127.0.0.1:5000/serve_resume/' +
+                  '/api/serve_resume/' +
                   professional.resume_file_path
                 "
                 target="_blank"
@@ -264,7 +264,7 @@ export default {
 
     async create_csv() {
       const token = this.getAuthToken() // Fetch token from local storage
-      const res = await fetch('http://127.0.0.1:5000/' + '/create-csv', {
+      const res = await fetch('/api/' + '/create-csv', {
         headers: {
           'Authentication-Token': token, // Add token in the headers
           // 'Content-Type': 'application/json',
@@ -273,10 +273,10 @@ export default {
       const task_id = (await res.json()).task_id
 
       const interval = setInterval(async () => {
-        const res = await fetch(`http://127.0.0.1:5000/get-csv/${task_id}`)
+        const res = await fetch(`/api/get-csv/${task_id}`)
         if (res.ok) {
           console.log('data is ready')
-          window.open(`http://127.0.0.1:5000/get-csv/${task_id}`)
+          window.open(`/api/get-csv/${task_id}`)
 
           clearInterval(interval)
         }
@@ -287,7 +287,7 @@ export default {
     async createService() {
       try {
         const token = this.getAuthToken()
-        const response = await fetch('http://127.0.0.1:5000/create_service', {
+        const response = await fetch('/api/create_service', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -310,7 +310,7 @@ export default {
     async fetchData() {
       try {
         const token = this.getAuthToken()
-        const response = await fetch('http://127.0.0.1:5000/admin_dashboard', {
+        const response = await fetch('/api/admin_dashboard', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -331,7 +331,7 @@ export default {
     async deleteService(id) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/delete_service/${id}`,
+        `/api/delete_service/${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -351,7 +351,7 @@ export default {
     async deleteProfessional(id) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/delete_professional/${id}`,
+        `/api/delete_professional/${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -371,7 +371,7 @@ export default {
     async deleteCustomer(id) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/delete_customer/${id}`,
+        `/api/delete_customer/${id}`,
         {
           method: 'DELETE',
           headers: {
@@ -391,7 +391,7 @@ export default {
     async updateProfessionalStatus(id, status) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/update_professional_status/${id}`,
+        `/api/update_professional_status/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -413,7 +413,7 @@ export default {
     async blockCustomer(id) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/block_customer/${id}`,
+        `/api/block_customer/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -433,7 +433,7 @@ export default {
     async unblockCustomer(id) {
       const token = this.getAuthToken()
       const response = await fetch(
-        `http://127.0.0.1:5000/unblock_customer/${id}`,
+        `/api/unblock_customer/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -452,7 +452,7 @@ export default {
     // ################## cache ###################
     async cacheClear() {
       try {
-        const response = await fetch('http://127.0.0.1:5000/clear_cache', {
+        const response = await fetch('/api/clear_cache', {
           method: 'POST'
         });
         const data = await response.json();

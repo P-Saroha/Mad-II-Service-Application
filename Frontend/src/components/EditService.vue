@@ -58,12 +58,12 @@ export default {
 
       if (!serviceId) {
         alert("Service ID is missing.");
-        this.$router.push("http://127.0.0.1:5000/admin_dashboard");
+        this.$router.push("/api/admin_dashboard");
         return;
       }
 
       try {
-        const response = await fetch(`http://127.0.0.1:5000/get_service/${serviceId}`, {
+        const response = await fetch(`/api/get_service/${serviceId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -85,7 +85,7 @@ export default {
       const token = localStorage.getItem("token"); // Fetch the token from localStorage
 
       try {
-        const response = await fetch(`http://127.0.0.1:5000/edit_service/${serviceId}`, {
+        const response = await fetch(`/api/edit_service/${serviceId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

@@ -111,7 +111,7 @@ export default {
     async fetchDashboardData() {
       try {
         const token = this.getToken();
-        const response = await fetch("http://127.0.0.1:5000/professional_dashboard", {
+        const response = await fetch("/api/professional_dashboard", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -143,7 +143,7 @@ export default {
     async acceptService(serviceId) {
       try {
         const token = this.getToken();
-        const response = await fetch(`http://127.0.0.1:5000/accept_service/${serviceId}`, {
+        const response = await fetch(`/api/accept_service/${serviceId}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -175,7 +175,7 @@ export default {
     async rejectService(serviceId) {
       try {
         const token = this.getToken();
-        const response = await fetch(`http://127.0.0.1:5000/reject_service/${serviceId}`, {
+        const response = await fetch(`/api/reject_service/${serviceId}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,

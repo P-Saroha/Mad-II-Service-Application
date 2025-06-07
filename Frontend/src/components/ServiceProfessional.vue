@@ -171,7 +171,7 @@ export default {
   methods: {
     async fetchServices() {
       try {
-        const response = await fetch("http://127.0.0.1:5000/get_services"); // Ensure correct endpoint
+        const response = await fetch("/api/get_services"); // Ensure correct endpoint
         const data = await response.json();
         this.services = data.services;
       } catch (error) {
@@ -196,7 +196,7 @@ export default {
       }
 
       try {
-        const response = await fetch("http://127.0.0.1:5000/service_professional_signup", { // Correct endpoint
+        const response = await fetch("/api/service_professional_signup", { // Correct endpoint
           method: "POST",
           body: formData,
         });

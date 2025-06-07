@@ -54,7 +54,7 @@ export default {
         }
         const serviceId = this.$route.params.service_id; // Get the service ID from the route
         // Send POST request using Fetch API
-        const response = await fetch(`http://127.0.0.1:5000/book_service/${serviceId}`, {
+        const response = await fetch(`/api/book_service/${serviceId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

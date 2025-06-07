@@ -112,7 +112,7 @@ export default {
         return;
       }
       try {
-        const response = await fetch('http://127.0.0.1:5000/customer_dashboard', {
+        const response = await fetch('/api/customer_dashboard', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export default {
     async closeService(serviceId) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://127.0.0.1:5000/close_service/${serviceId}`, {
+        const response = await fetch(`/api/close_service/${serviceId}`, {
           method: 'POST',
           headers: { 
             'Authorization': `Bearer ${token}` 
@@ -153,7 +153,7 @@ export default {
           remarks: this.remarks[serviceId] 
         };
         
-        const response = await fetch(`http://127.0.0.1:5000/rate_service/${serviceId}`, {
+        const response = await fetch(`/api/rate_service/${serviceId}`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
